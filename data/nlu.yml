@@ -11,6 +11,25 @@ nlu:
     - selamat sore
     - selamat malam
 
+- intent: introduction_bidang_konsentrasi
+  examples: |
+    - saya ingin bertanya mengenai bidang konsentrasi
+    - mau tanya tentang bidang konsentrasi
+    - ingin tahu mengenai bidang konsentrasi
+    - apa itu bidang konsentrasi
+
+- intent: description_bidang_konsentrasi
+  examples: |
+    - saya ingin tahu tentang bidang [sistem cerdas](bidang_konsentrasi)
+    - saya ingin tahu tentang bidang [sistem distribusi](bidang_konsentrasi)
+    - saya ingin tahu tentang bidang [grafis dan visualisasi](bidang_konsentrasi)
+    - tentang apa bidang [sistem cerdas](bidang_konsentrasi)
+    - tentang apa bidang [sistem distribusi](bidang_konsentrasi)
+    - tentang apa bidang [grafis dan visualisasi](bidang_konsentrasi)
+    - apa itu bidang [sistem cerdas](bidang_konsentrasi)
+    - apa itu bidang [sistem distribusi](bidang_konsentrasi)
+    - apa itu bidang [grafis dan visualisasi](bidang_konsentrasi)
+
 - intent: goodbye
   examples: |
     - cu

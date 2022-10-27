@@ -1,27 +1,23 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
 
 
-# This is a simple example for a custom action which utters "Hello World!"
+class ActionBidangKonsentrasiDescription(Action):
+    def name(self) -> Text:
+        return "action_bidang_konsentrasi_description"
 
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        bidang_konsentrasi = tracker.get_slot("bidang_konsentrasi")
+        if not bidang_konsentrasi:
+            dispatcher.utter_message(
+                template="utter_description_bidang_konsentrasi",
+                text="Maaf, bidang konsentrasi tersebut tidak terdata pada sistem kami"
+            )
+        else:
+            dispatcher.utter_message(
+                template="utter_description_bidang_konsentrasi",
+                text=f"pilihan mu: {bidang_konsentrasi}!"
+            )
+        return []
