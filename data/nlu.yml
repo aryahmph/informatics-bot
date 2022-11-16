@@ -1,104 +1,37 @@
 version: "3.1"
-
 nlu:
-- intent: greet
-  examples: |
-    - p
-    - halo
-    - hai
-    - selamat pagi
-    - selamat siang
-    - selamat sore
-    - selamat malam
-
-- intent: introduction_bidang_konsentrasi
-  examples: |
-    - saya ingin bertanya mengenai bidang konsentrasi
-    - mau tanya tentang bidang konsentrasi
-    - ingin tahu mengenai bidang konsentrasi
-    - apa itu bidang konsentrasi
-
-- intent: description_bidang_konsentrasi
-  examples: |
-    - saya ingin tahu tentang bidang [sistem cerdas](bidang_konsentrasi)
-    - saya ingin tahu tentang bidang [sistem distribusi](bidang_konsentrasi)
-    - saya ingin tahu tentang bidang [grafis dan visualisasi](bidang_konsentrasi)
-    - tentang apa bidang [sistem cerdas](bidang_konsentrasi)
-    - tentang apa bidang [sistem distribusi](bidang_konsentrasi)
-    - tentang apa bidang [grafis dan visualisasi](bidang_konsentrasi)
-    - apa itu bidang [sistem cerdas](bidang_konsentrasi)
-    - apa itu bidang [sistem distribusi](bidang_konsentrasi)
-    - apa itu bidang [grafis dan visualisasi](bidang_konsentrasi)
-
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+  - intent: greet
+    examples: |
+      - p
+      - halo
+      - hai
+      - selamat pagi
+      - selamat siang
+      - selamat sore
+      - selamat malam
+  - intent: introduction_bidang_konsentrasi
+    examples: |
+      - saya ingin bertanya mengenai bidang konsentrasi
+      - mau tanya tentang bidang konsentrasi
+      - ingin tahu mengenai bidang konsentrasi
+      - apa itu bidang konsentrasi
+      - saya mau tanya tentang bidang konsentrasi
+      - apa yang dimaksud dengan bidang konsentrasi
+  - intent: description_bidang_konsentrasi
+    examples: |
+      - saya ingin tahu tentang bidang [sistem cerdas](bidang_konsentrasi)
+      - saya ingin tahu tentang bidang [sistem terdistribusi](bidang_konsentrasi)
+      - saya ingin tahu tentang bidang [grafis dan visual](bidang_konsentrasi)
+      - saya ingin tahu tentang bidang
+      - tentang apa bidang [sistem cerdas](bidang_konsentrasi)
+      - tentang apa bidang [sistem terdistribusi](bidang_konsentrasi)
+      - tentang apa bidang [grafis dan visual](bidang_konsentrasi)
+      - tentang apa bidang
+      - apa itu bidang [sistem cerdas](bidang_konsentrasi)
+      - apa itu bidang [sistem terdistribusi](bidang_konsentrasi)
+      - apa itu bidang [grafis dan visual](bidang_konsentrasi)
+      - apa itu bidang
+      - saya mau tanya tentang bidang [sistem cerdas](bidang_konsentrasi)
+      - saya mau tanya tentang bidang [sistem terdistribusi](bidang_konsentrasi)
+      - saya mau tanya tentang bidang [grafis dan visual](bidang_konsentrasi)
+      - saya mau tanya tentang bidang

@@ -1,19 +1,11 @@
-version: "3.1"
+version: '3.1'
 
 intents:
+  - description_bidang_konsentrasi
   - greet
   - introduction_bidang_konsentrasi
-  - description_bidang_konsentrasi
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
 entities:
   - bidang_konsentrasi
-
 slots:
   bidang_konsentrasi:
     type: text
@@ -21,38 +13,20 @@ slots:
     mappings:
       - type: from_entity
         entity: bidang_konsentrasi
-
+actions:
+  - action_bidang_konsentrasi_description
+  - utter_greet
+  - utter_introduction_bidang_konsentrasi
 responses:
   utter_greet:
-    - text: "Halo, selamat datang di Informatics Bot, ada yang bisa dibantu ?"
-
+    - text: Halo, selamat datang di Informatics Bot, ada yang bisa dibantu ?
   utter_introduction_bidang_konsentrasi:
-    - text: "Bidang konsentrasi merupakan bidang yang akan ditekuni selama menjalani perkuliahan dan karir kedepanya dengan
-    mengambil mata kuliah pilihan yang terkait dengan bidang tersebut. Bidang konsentrasi yang terdapat pada jurusan Teknik Informatika Universitas Sriwijaya S1 diantaranya
-    \n\n
-    1. Sistem Cerdas\n
-    2. Sistem Terdistribusi\n
-    3. Grafis dan Visualisasi"
-
-  utter_description_bidang_konsentrasi:
-    - text: "test {bidang_konsentrasi}"
-
-  utter_cheer_up:
-    - text: "Here is something to cheer you up:"
-      image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-    - text: "Did that help you?"
-
-  utter_happy:
-    - text: "Great, carry on!"
-
-  utter_goodbye:
-    - text: "Bye"
-
-  utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
-
+    - text: |-
+        Bidang konsentrasi merupakan bidang yang akan ditekuni selama menjalani perkuliahan dan karir kedepanya dengan mengambil mata kuliah pilihan yang terkait dengan bidang tersebut. Bidang konsentrasi yang terdapat pada jurusan Teknik Informatika Universitas Sriwijaya S1 diantaranya 
+        
+         1. Sistem Cerdas
+         2. Sistem Terdistribusi
+         3. Grafis dan Visualisasi
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

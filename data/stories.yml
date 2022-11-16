@@ -1,16 +1,19 @@
 version: "3.1"
 
 stories:
-
   - story: ask bidang konsentrasi
     steps:
       - intent: greet
       - action: utter_greet
       - intent: introduction_bidang_konsentrasi
       - action: utter_introduction_bidang_konsentrasi
-      - intent: description_bidang_konsentrasi
-        entities:
-          - bidang_konsentrasi: sistem cerdas
-          - slot_was_set:
-              - bidang_konsentrasi: sistem cerdas
-      - action: utter_description_bidang_konsentrasi
+      - action: bidang_konsentrasi_form
+      - active_loop: bidang_konsentrasi_form
+      - slot_was_set:
+          - requested_slot: bidang_konsentrasi
+      - slot_was_set:
+          - requested_slot: sistem cerdas
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_bidang_konsentrasi_description

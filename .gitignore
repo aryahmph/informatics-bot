@@ -3,3 +3,5 @@
 .rasa
 
 models
+
+story_graph.dot
