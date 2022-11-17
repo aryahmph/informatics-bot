@@ -1,18 +1,16 @@
 version: "3.1"
 
 rules:
-  - rule: Activate bidang konsentrasi form
-    steps:
-      - intent: description_bidang_konsentrasi
-      - action: bidang_konsentrasi_form
-      - active_loop: bidang_konsentrasi_form
 
-  - rule: Submit bidang konsentrasi form
-    condition:
-      - active_loop: bidang_konsentrasi_form
-    steps:
-      - action: bidang_konsentrasi_form
-      - active_loop: null
-      - slot_was_set:
-          - requested_slot: null
-      - action: action_bidang_konsentrasi_description
+
+
+
+
+
+
+
+
+
+
+
+

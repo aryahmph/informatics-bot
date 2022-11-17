@@ -1,32 +1,50 @@
 version: '3.1'
-
 intents:
-  - description_bidang_konsentrasi
-  - greet
-  - introduction_bidang_konsentrasi
+- ask_angkatan
+- description_bidang_konsentrasi
+- greet
+- introduction_bidang_konsentrasi
+- introduction_mata_kuliah
 entities:
-  - bidang_konsentrasi
+- angkatan
+- bidang_konsentrasi
 slots:
   bidang_konsentrasi:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: bidang_konsentrasi
+    - type: from_entity
+      entity: bidang_konsentrasi
+  angkatan:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: angkatan
 actions:
-  - action_bidang_konsentrasi_description
-  - utter_greet
-  - utter_introduction_bidang_konsentrasi
+- action_bidang_konsentrasi_description
+- utter_ask_angkatan
+- utter_greet
+- utter_introduction_bidang_konsentrasi
+- utter_introduction_mata_kuliah
 responses:
   utter_greet:
-    - text: Halo, selamat datang di Informatics Bot, ada yang bisa dibantu ?
+  - text: Halo, selamat datang di Informatics Bot, ada yang bisa dibantu ?
   utter_introduction_bidang_konsentrasi:
-    - text: |-
-        Bidang konsentrasi merupakan bidang yang akan ditekuni selama menjalani perkuliahan dan karir kedepanya dengan mengambil mata kuliah pilihan yang terkait dengan bidang tersebut. Bidang konsentrasi yang terdapat pada jurusan Teknik Informatika Universitas Sriwijaya S1 diantaranya 
-        
-         1. Sistem Cerdas
-         2. Sistem Terdistribusi
-         3. Grafis dan Visualisasi
+  - text: |-
+      Bidang konsentrasi merupakan bidang yang akan ditekuni selama menjalani perkuliahan dan karir kedepanya dengan mengambil mata kuliah pilihan yang terkait dengan bidang tersebut. Bidang konsentrasi yang terdapat pada jurusan Teknik Informatika Universitas Sriwijaya S1 diantaranya 
+
+      1. Sistem Cerdas
+      2. Sistem Terdistribusi
+      3. Grafis dan Visualisasi
+      
+      Bidang apa yang ingin anda tanyakan?
+  utter_introduction_mata_kuliah:
+  - text: |
+      - Angkatan berapa anda saat ini?
+  utter_ask_angkatan:
+  - text: |
+      - hehe {angkatan}
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

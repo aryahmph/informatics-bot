@@ -1,12 +1,14 @@
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.types import DomainDict
+
 
 class ActionBidangKonsentrasiDescription(Action):
     dict = {
-        "sistem cerdas": "ini sistem cerdas ges",
-        "sistem terdistribusi": "kalo ini sistem terdistribusi",
+        "sistem cerdas": "Sistem cerdas (intelligent system) adalah sistem yang dibangun dengan menggunakan teknik-teknik artificial intelligence (kecerdasan buatan).",
+        "sistem terdistribusi": "Sistem terdistribusi adalah kumpulan komputer otonom yang dihubungkan oleh jaringan dengan software yang dirancang untuk menghasilkan fasilitas komputerisasi terintegrasi dianggap oleh pengguna sebagai satu sistem komputer tunggal.",
         "grafis dan visual": "yang ini grafis dan visual"
     }
 
