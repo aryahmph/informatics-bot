@@ -26,3 +26,25 @@ class ActionBidangKonsentrasiDescription(Action):
                 text="Bidang konsentrasi yang anda masukkan tidak valid"
             )
         return []
+
+
+class ActionAskAngkatan(Action):
+    def name(self) -> Text:
+        return "action_ask_angkatan"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        angkatan = int(tracker.get_slot("angkatan"))
+        if angkatan and 2017 <= angkatan <= 2022:
+            if 2017 <= angkatan <= 2020:
+                dispatcher.utter_message(
+                    text=f"Baik, kamu termasuk kurikulum 2017, mata kuliah apa yang ingin ditanyakan?"
+                )
+            else:
+                dispatcher.utter_message(
+                    text=f"Baik, kamu termasuk kurikulum 2021, mata kuliah apa yang ingin ditanyakan?"
+                )
+        else:
+            dispatcher.utter_message(
+                text="Angkatan tidak valid"
+            )
+        return []

@@ -25,4 +25,4 @@ stories:
           - angkatan: '2020'
       - slot_was_set:
           - angkatan: '2020'
-      - action: utter_ask_angkatan
+      - action: action_ask_angkatan

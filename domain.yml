@@ -27,6 +27,7 @@ actions:
 - utter_greet
 - utter_introduction_bidang_konsentrasi
 - utter_introduction_mata_kuliah
+- action_ask_angkatan
 responses:
   utter_greet:
   - text: Halo, selamat datang di Informatics Bot, ada yang bisa dibantu ?
@@ -42,9 +43,9 @@ responses:
   utter_introduction_mata_kuliah:
   - text: |
       - Angkatan berapa anda saat ini?
-  utter_ask_angkatan:
-  - text: |
-      - hehe {angkatan}
+#  utter_ask_angkatan:
+#  - text: |
+#      - hehe {angkatan}
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
