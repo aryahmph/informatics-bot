@@ -1,56 +1,68 @@
 version: "3.1"
 nlu:
-- intent: greet
-  examples: |
-    - p
-    - halo
-    - hai
-    - assalamualaikum
-    - selamat pagi
-    - selamat siang
-    - selamat sore
-    - selamat malam
-- intent: introduction_bidang_konsentrasi
-  examples: |
-    - saya ingin bertanya mengenai bidang konsentrasi
-    - mau tanya tentang bidang konsentrasi
-    - ingin tahu mengenai bidang konsentrasi
-    - apa itu bidang konsentrasi
-    - saya mau tanya tentang bidang konsentrasi
-    - apa yang dimaksud dengan bidang konsentrasi
-    - saya ingin bertanya tentang bidang konsentrasi
-- intent: description_bidang_konsentrasi
-  examples: |
-    - saya ingin tahu tentang bidang [sistem cerdas](bidang_konsentrasi)
-    - saya ingin tahu tentang bidang [sistem terdistribusi](bidang_konsentrasi)
-    - saya ingin tahu tentang bidang [grafis dan visual](bidang_konsentrasi)
-    - saya ingin tahu tentang bidang
-    - tentang apa bidang [sistem cerdas](bidang_konsentrasi)
-    - tentang apa bidang [sistem terdistribusi](bidang_konsentrasi)
-    - tentang apa bidang [grafis dan visual](bidang_konsentrasi)
-    - tentang apa bidang
-    - apa itu bidang [sistem cerdas](bidang_konsentrasi)
-    - apa itu bidang [sistem terdistribusi](bidang_konsentrasi)
-    - apa itu bidang [grafis dan visual](bidang_konsentrasi)
-    - apa itu bidang
-    - saya mau tanya tentang bidang [sistem cerdas](bidang_konsentrasi)
-    - saya mau tanya tentang bidang [sistem terdistribusi](bidang_konsentrasi)
-    - saya mau tanya tentang bidang [grafis dan visual](bidang_konsentrasi)
-    - saya mau tanya tentang bidang
-    - apa itu [sistem cerdas](bidang_konsentrasi)
-    - tentang apa bidang [sistem cerdas](bidang_konsentrasi)
-- intent: introduction_mata_kuliah
-  examples: |
-    - saya ingin bertanya mengenai mata kuliah
-    - mau tanya tentang mata kuliah
-    - ingin tahu mengenai mata kuliah
-    - saya mau tanya tentang mata kuliah
-    - saya ingin bertanya tentang mata kuliah
-- regex: angkatan
-  examples: |
-    - ^(201[7-9]|202[0-2])$
-- intent: ask_angkatan
-  examples: |
-    - angkatan [2020](angkatan)
-    - [2020](angkatan)
-    - saya angkatan [2020](angkatan)
+  - intent: greet
+    examples: |
+      - p
+      - halo
+      - hai
+      - assalamualaikum
+      - selamat pagi
+      - selamat siang
+      - selamat sore
+      - selamat malam
+      - /start
+  - intent: introduction_bidang_konsentrasi
+    examples: |
+      - saya ingin bertanya mengenai bidang konsentrasi
+      - mau tanya tentang bidang konsentrasi
+      - ingin tahu mengenai bidang konsentrasi
+      - apa itu bidang konsentrasi
+      - saya mau tanya tentang bidang konsentrasi
+      - apa yang dimaksud dengan bidang konsentrasi
+      - saya ingin bertanya tentang bidang konsentrasi
+  - intent: description_bidang_konsentrasi
+    examples: |
+      - saya ingin tahu tentang bidang [sistem cerdas](bidang_konsentrasi)
+      - saya ingin tahu tentang bidang [sistem terdistribusi](bidang_konsentrasi)
+      - saya ingin tahu tentang bidang [grafis dan visual](bidang_konsentrasi)
+      - saya ingin tahu tentang bidang
+      - tentang apa bidang [sistem cerdas](bidang_konsentrasi)
+      - tentang apa bidang [sistem terdistribusi](bidang_konsentrasi)
+      - tentang apa bidang [grafis dan visual](bidang_konsentrasi)
+      - tentang apa bidang
+      - apa itu bidang [sistem cerdas](bidang_konsentrasi)
+      - apa itu bidang [sistem terdistribusi](bidang_konsentrasi)
+      - apa itu bidang [grafis dan visual](bidang_konsentrasi)
+      - apa itu bidang
+      - saya mau tanya tentang bidang [sistem cerdas](bidang_konsentrasi)
+      - saya mau tanya tentang bidang [sistem terdistribusi](bidang_konsentrasi)
+      - saya mau tanya tentang bidang [grafis dan visual](bidang_konsentrasi)
+      - saya mau tanya tentang bidang
+      - [sistem cerdas](bidang_konsentrasi)
+      - [sistem terdistribusi](bidang_konsentrasi)
+      - [grafis dan visual](bidang_konsentrasi)
+  - intent: introduction_mata_kuliah
+    examples: |
+      - saya ingin bertanya mengenai mata kuliah
+      - mau tanya tentang mata kuliah
+      - ingin tahu mengenai mata kuliah
+      - saya mau tanya tentang mata kuliah
+      - saya ingin bertanya tentang mata kuliah
+  - regex: angkatan
+    examples: |
+      - ^(201[7-9]|202[0-2])$
+  - intent: ask_angkatan
+    examples: |
+      - angkatan [2020](angkatan)
+      - [2020](angkatan)
+      - saya angkatan [2020](angkatan)
+  - intent: ask_mata_kuliah_description
+    examples: |
+      - saya mau tanya tentang matkul [algoritma dan pemograman 1](mata_kuliah)
+      - saya mau tanya tentang matkul [algoritma dan pemograman 2](mata_kuliah)
+      - saya mau tanya tentang matkul [pemograman web 1](mata_kuliah)
+      - saya mau tanya tentang matkul [struktur data](mata_kuliah)
+      - [algoritma dan pemograman 1](mata_kuliah)
+      - [algoritma dan pemograman 2](mata_kuliah)
+      - [pemograman web 1](mata_kuliah)
+      - [struktur data](mata_kuliah)

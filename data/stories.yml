@@ -13,6 +13,7 @@ stories:
       - slot_was_set:
           - bidang_konsentrasi: sistem cerdas
       - action: action_bidang_konsentrasi_description
+      - action: utter_greet
 
   - story: interactive_story_2
     steps:
@@ -26,3 +27,10 @@ stories:
       - slot_was_set:
           - angkatan: '2020'
       - action: action_ask_angkatan
+      - intent: ask_mata_kuliah_description
+        entities:
+          - mata_kuliah: kecerdasan buatan
+      - slot_was_set:
+          - mata_kuliah: kecerdasan buatan
+      - action: action_ask_mata_kuliah_description
+      - action: utter_greet
