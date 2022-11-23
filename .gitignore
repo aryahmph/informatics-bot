@@ -1,4 +1,7 @@
 .idea
 .vscode
 .rasa
-.models
+
+models
+
+story_graph.dot

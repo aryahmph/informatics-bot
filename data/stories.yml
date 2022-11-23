@@ -1,30 +1,36 @@
 version: "3.1"
 
 stories:
+  - story: interactive_story_1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: introduction_bidang_konsentrasi
+      - action: utter_introduction_bidang_konsentrasi
+      - intent: description_bidang_konsentrasi
+        entities:
+          - bidang_konsentrasi: sistem cerdas
+      - slot_was_set:
+          - bidang_konsentrasi: sistem cerdas
+      - action: action_bidang_konsentrasi_description
+      - action: utter_greet
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - story: interactive_story_2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: introduction_mata_kuliah
+      - action: utter_introduction_mata_kuliah
+      - intent: ask_angkatan
+        entities:
+          - angkatan: '2020'
+      - slot_was_set:
+          - angkatan: '2020'
+      - action: action_ask_angkatan
+      - intent: ask_mata_kuliah_description
+        entities:
+          - mata_kuliah: kecerdasan buatan
+      - slot_was_set:
+          - mata_kuliah: kecerdasan buatan
+      - action: action_ask_mata_kuliah_description
+      - action: utter_greet

@@ -1,34 +1,89 @@
-version: "3.1"
-
+version: '3.1'
 intents:
+  - ask_angkatan
+  - description_bidang_konsentrasi
   - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
+  - introduction_bidang_konsentrasi
+  - introduction_mata_kuliah
+  - ask_mata_kuliah_description
+entities:
+  - angkatan
+  - bidang_konsentrasi
+  - mata_kuliah
+  - kurikulum
+slots:
+  bidang_konsentrasi:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: bidang_konsentrasi
+  angkatan:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: angkatan
+  mata_kuliah:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: mata_kuliah
+  kurikulum:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: kurikulum
+actions:
+  - action_bidang_konsentrasi_description
+  - utter_greet
+  - utter_introduction_bidang_konsentrasi
+  - utter_introduction_mata_kuliah
+  - action_ask_angkatan
+  - action_ask_mata_kuliah_description
 responses:
   utter_greet:
-  - text: "Halo, selamat datang di Informatics Bot, ada yang bisa dibantu ?"
+    - buttons:
+        - payload: /introduction_bidang_konsentrasi
+          title: Bidang Konsentrasi
+        - payload: /introduction_mata_kuliah
+          title: Mata Kuliah
+      button_type: inline
+      text: |-
+        Halo, selamat datang di Informatics Bot, kami akan membantu anda perihal informasi mengenai Bidang Konsentrasi dan Mata Kuliah pada Jurusan Teknik Informatika.
+        
+        Apa yang ingin anda ketahui ?
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  utter_introduction_bidang_konsentrasi:
+    - buttons:
+        - payload: /description_bidang_konsentrasi
+          title: Sistem Cerdas
+        - payload: /description_bidang_konsentrasi
+          title: Sistem Terdistribusi
+        - payload: /description_bidang_konsentrasi
+          title: Grafis dan Visual
+      button_type: reply
+      text: |-
+        Bidang konsentrasi merupakan bidang yang akan ditekuni selama menjalani perkuliahan dan karir kedepanya dengan mengambil mata kuliah pilihan yang terkait dengan bidang tersebut. Bidang konsentrasi yang terdapat pada jurusan Teknik Informatika Universitas Sriwijaya S1.
+        
+        Bidang apa yang ingin anda tanyakan?
+  utter_introduction_mata_kuliah:
+    - buttons:
+        - payload: /ask_angkatan
+          title: "2017"
+        - payload: /ask_angkatan
+          title: "2018"
+        - payload: /ask_angkatan
+          title: "2019"
+        - payload: /ask_angkatan
+          title: "2020"
+        - payload: /ask_angkatan
+          title: "2021"
+        - payload: /ask_angkatan
+          title: "2022"
+      button_type: reply
+      text: Angkatan berapa anda ?
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
