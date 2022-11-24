@@ -9,7 +9,7 @@ class ActionBidangKonsentrasiDescription(Action):
     dict = {
         "sistem cerdas": "Sistem cerdas (intelligent system) adalah sistem yang dibangun dengan menggunakan teknik-teknik artificial intelligence (kecerdasan buatan).",
         "sistem terdistribusi": "Sistem terdistribusi adalah kumpulan komputer otonom yang dihubungkan oleh jaringan dengan software yang dirancang untuk menghasilkan fasilitas komputerisasi terintegrasi dianggap oleh pengguna sebagai satu sistem komputer tunggal.",
-        "grafis dan visual": "yang ini grafis dan visual"
+        "grafis dan visual": "Grafis atau yang dalam bahasa Inggris dikenal dengan Grafis adalah presentasi visual pada sebuah permukaan seperti dinding, kanvas, layar komputer, kertas, atau batu bertujuan untuk memberi tanda, informasi, ilustrasi, atau untuk hiburan. Contohnya adalah: foto, gambar, Line Art, grafik, diagram, tipografi, angka, simbol, desain geometris, peta, gambar teknik, dan lain-lain. Seringkali dalam bentuk kombinasi teks, ilustrasi, dan warna."
     }
 
     def name(self) -> Text:
